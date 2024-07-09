@@ -50,8 +50,5 @@ def generate_restaurant_name_and_items(cuisine):
     
     return response
 
-def test():
-    print('hello')
-
 if __name__ == "__main__":
     print(generate_restaurant_name_and_items("Indian"))
