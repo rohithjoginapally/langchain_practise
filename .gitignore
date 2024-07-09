@@ -1,3 +1,4 @@
 app.ipynb
 __pycache__
 secret_key.py
+.env

@@ -1,10 +1,22 @@
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
-from secret_key import OPENAI_API_KEY
 from langchain_openai import OpenAI
 import os
-os.environ['OPENAI_API_KEY'] = OPENAI_API_KEY
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
+
+# Access the API key from environment variables
+api_key = os.getenv('OPENAI_API_KEY')
+
+# Check if the API key was loaded correctly
+if api_key is None:
+    raise ValueError("API key not found. Ensure that the .env file is correctly configured and located.")
+
+# Set the API key for OpenAI
+os.environ['OPENAI_API_KEY'] = api_key
 
 
 
